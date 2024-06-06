@@ -8,6 +8,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { PreciosComponent } from './Components/precios/precios.component';
 import { ProtegidaComponent } from './Components/protegida/protegida.component';
 import { provideAuth0 } from '@auth0/auth0-angular';
+import { InfoComponent } from './Components/info/info.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { provideAuth0 } from '@auth0/auth0-angular';
     NavbarComponent,
     HomeComponent,
     PreciosComponent,
-    ProtegidaComponent
+    ProtegidaComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

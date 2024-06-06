@@ -11,16 +11,12 @@
                     <a class="nav-link active" aria-current="page" routerLink="home" routerLinkActive="active">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="precios" routerLinkActive="active">Precios</a>
+                    <a class="nav-link active" aria-current="page" routerLink="precios" routerLinkActive="active">Todos los Estudiantes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="protegida" routerLinkActive="active">Protected</a>
+                    <a class="nav-link active" aria-current="page" routerLink="protegida" routerLinkActive="active">Estudiantes Deuda</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <button class="btn btn-danger" *ngIf="!(auth.isAuthenticated$ | async)" (click)="login()">Login</button>
-                <button class="btn btn-primary" *ngIf="(auth.isAuthenticated$ | async)" (click)="logout()">Logout</button>
-            </form>
         </div>
     </div>
 </nav>

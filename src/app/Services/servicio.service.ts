@@ -4,93 +4,130 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ServicioService {
-  carros:any[] = [
-    {
-      ciudad_origen: 'Quito',
-      ciudad_destino: 'Guayaquil',
-      precio: '15',
-      descripcion: 'Ruta de la Sierra a la Costa',
-      tipo: 'interno',
-      id: 1,
-    },
 
+    private estudiantes: Estudiantes[] = [
     {
-      ciudad_origen: 'Cuenca',
-      ciudad_destino: 'Loja',
-      precio: '10',
-      descripcion: 'Ruta de la Sierra al Sur',
-      tipo: 'externo',
-      id: 2,
+      cedula: '0701111111',
+      nombre: 'Pedro Martinez',
+      edad: '21',
+      direccion: 'Cuenca, Ecuador',
+      observacion: 'Destacado en matemáticas',
+      anio: 'basica',
+      deuda: '50',
+      id: 1
     },
     {
-      ciudad_origen: 'Manta',
-      ciudad_destino: 'Portoviejo',
-      precio: '13',
-      descripcion: 'Ruta de la Costa Norte',
-      tipo: 'interno',
-      id: 3,
+      cedula: '0702222222',
+      nombre: 'Ana Lopez',
+      edad: '19',
+      direccion: 'Loja, Ecuador',
+      observacion: 'Participante en actividades culturales',
+      anio: 'preparatoria',
+      deuda: '0',
+      id: 2
     },
     {
-      ciudad_origen: 'Ambato',
-      ciudad_destino: 'Riobamba',
-      precio: '5',
-      descripcion: 'Ruta de la Sierra Central',
-      tipo: 'externo',
-      id: 4,
+      cedula: '0703333333',
+      nombre: 'Carlos Sanchez',
+      edad: '23',
+      direccion: 'Manta, Ecuador',
+      observacion: 'Excelente en ciencias',
+      anio: 'bachillerato',
+      deuda: '200',
+      id: 3
     },
     {
-      ciudad_origen: 'Guayaquil',
-      ciudad_destino: 'Salinas',
-      precio: '8',
-      descripcion: 'Ruta de la Costa Sur',
-      tipo: 'interno',
-      id: 5,
+      cedula: '0704444444',
+      nombre: 'Laura Gomez',
+      edad: '20',
+      direccion: 'Ambato, Ecuador',
+      observacion: 'Participante en actividades deportivas',
+      anio: 'basica',
+      deuda: '0',
+      id: 4
     },
     {
-      ciudad_origen: 'Quito',
-      ciudad_destino: 'Mindo',
-      precio: '18',
-      descripcion: 'Ruta de la Sierra al Bosque Nublado',
-      tipo: 'externo',
-      id: 6,
+      cedula: '0705555555',
+      nombre: 'Diego Castro',
+      edad: '22',
+      direccion: 'Esmeraldas, Ecuador',
+      observacion: 'Destacado en música',
+      anio: 'preparatoria',
+      deuda: '100',
+      id: 5
     },
     {
-      ciudad_origen: 'Cuenca',
-      ciudad_destino: 'Gualaceo',
-      precio: '20',
-      descripcion: 'Ruta de la Sierra a los Pueblos Tradicionales',
-      tipo: 'interno',
-      id: 7,
+      cedula: '0706666666',
+      nombre: 'Sofia Ramirez',
+      edad: '21',
+      direccion: 'Portoviejo, Ecuador',
+      observacion: 'Participante en actividades sociales',
+      anio: 'bachillerato',
+      deuda: '0',
+      id: 6
     },
     {
-      ciudad_origen: 'Manta',
-      ciudad_destino: 'Montecristi',
-      precio: '15',
-      descripcion: 'Ruta de la Costa a los Pueblos Artesanales',
-      tipo: 'externo',
-      id: 8,
+      cedula: '0707777777',
+      nombre: 'Andres Castro',
+      edad: '19',
+      direccion: 'Ibarra, Ecuador',
+      observacion: 'Destacado en arte',
+      anio: 'basica',
+      deuda: '50',
+      id: 7
     },
     {
-      ciudad_origen: 'Ambato',
-      ciudad_destino: 'Baños',
-      precio: '13',
-      descripcion: 'Ruta de la Sierra a las Aguas Termales',
-      tipo: 'interno',
-      id: 9,
+      cedula: '0708888888',
+      nombre: 'Valeria Mendoza',
+      edad: '23',
+      direccion: 'Santo Domingo, Ecuador',
+      observacion: 'Participante en actividades científicas',
+      anio: 'prepatoria',
+      deuda: '0',
+      id: 8
     },
     {
-      ciudad_origen: 'Guayaquil',
-      ciudad_destino: 'Playas',
-      precio: '8',
-      descripcion: 'Ruta de la Costa a las Playas',
-      tipo: 'externo',
-      id: 10,
+      cedula: '0709999999',
+      nombre: 'Maria Rodriguez',
+      edad: '18',
+      direccion: 'Quito, Ecuador',
+      observacion: 'Destacada en deportes',
+      anio: 'bachillerato',
+      deuda: '0',
+      id: 9
     },
+    {
+      cedula: '0710000000',
+      nombre: 'Juan Perez',
+      edad: '24',
+      direccion: 'Guayaquil, Ecuador',
+      observacion: 'Participante en actividades académicas',
+      anio: 'basica',
+      deuda: '100',
+      id: 10
+    }
   ];
+
+  getEstudiantes() {
+    return this.estudiantes;
+  }
+
+  getEstudiante(id: number) {
+    return this.estudiantes.find(item => id == item.id);
+  }
   
-   getCarros(){
-    return this.carros;
-   }
-   
+  
+
   constructor() { }
+}
+
+export interface Estudiantes {
+  cedula:string;
+  nombre:string;
+  edad:string;
+  direccion:string;
+  observacion:string;
+  anio:string;
+  deuda:string;
+  id: number;
 }

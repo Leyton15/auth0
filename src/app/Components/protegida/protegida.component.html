@@ -1,25 +1,33 @@
-<div class="container mt-2 animate__animated animate__fadeIn">
-    <h1 class="display-4">Buscar Ruta:</h1>
-    <hr>
-    <div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar ruta" aria-label="Buscar ruta" aria-describedby="button-addon2" #buscarTexto>
-            <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+<div class="jumbotron jumbotron-fluid mt-2 animate__animated animate__fadeIn">
+    <div class="container">
+        <h1 class="display-4 animated fadeIn fast">Rutas</h1>
+        <hr>
+        <div class="dropdown lead animated fadeIn fast">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Opciones
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" (click)="mostrarEstudiantes('todos')">Todos</a></li>
+                <li><a class="dropdown-item" (click)="mostrarEstudiantes('deudores')">Deudores</a></li>
+                <li><a class="dropdown-item" (click)="mostrarEstudiantes('no-deudores')">No deudores</a></li>
+            </ul>
         </div>
     </div>
-    <div class=" row row-cols-3 ">
-        <div class="col animated fadeIn ">
-            <div class="card mb-3 animate__animated animate__slideInUp ">
-                <div class="card-body text ">
-                    <h5 class="card-title ">Ciudad Origen: </h5>
-                    <h5 class="card-title ">Ciudad Destino: </h5>
-                    <h5 class="card-title ">Precio: </h5>
-                    <h5 class="card-title ">Tipo: </h5>
-                    <div class="d-grid gap-2 ">
-                        <button type="button " class="btn btn-outline-primary">Ver más</button>
+    <div class="mt-2">
+        <div class="row row-cols-3 ">
+            <div class="col animated fadeIn" *ngFor="let est of estudiantes">
+                <div class="card mb-3 animate__animated animate__slideInUp">
+                    <div class="card-body text">
+                        <h5 class="card-title">Cedula: {{ est.cedula }}</h5>
+                        <h5 class="card-title">Nombre: {{ est.nombre }}</h5>
+                        <h5 class="card-title">Edad: {{ est.edad }}</h5>
+                        <h5 class="card-title">Año: {{ est.anio }}</h5>
+                        <h5 class="card-title">Deuda: {{ est.deuda }}</h5>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-outline-primary" (click)="verEstudiante(est.id)">Ver más</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

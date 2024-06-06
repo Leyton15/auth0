@@ -1,0 +1,25 @@
+<div class="container mt-3">
+    <div class="container">
+        <div class="row animated fadeIn">
+            <div class="row row-cols-3 ">
+                <div class="col animated fadeIn">
+                    <div class="card mb-3">
+                        <div class="card-body text">
+                            <h5 class="card-title">Cedula: {{ ob.cedula }}</h5>
+                            <h5 class="card-title">Nombre: {{ ob.nombre }}</h5>
+                            <h5 class="card-title">Edad: {{ ob.edad }}</h5>
+                            <h5 class="card-title">Año: {{ ob.anio }}</h5>
+                            <h5 class="card-title">Dirección: {{ ob.direccion }}</h5>
+                            <h5 class="card-title">Observación: {{ ob.observacion }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class=" d-grid gap-2 ">
+                    <a [routerLink]="['/precios']" class="btn btn-outline-danger">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
