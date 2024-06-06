@@ -87,6 +87,10 @@ export class ServicioService {
       id: 10,
     },
   ];
-
-    constructor() { }
+  
+   getCarros(){
+    return this.carros;
+   }
+   
+  constructor() { }
 }
